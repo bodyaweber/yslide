@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Slideshow example</title>
+<link href="css/layout.css" rel="stylesheet" />
+<link href="css/yslide.css" rel="stylesheet" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/yslide.js" type="text/javascript"></script>
+<script>
+	$(document).ready ( function () {
+		var el = $.ySlide ("#slideshow", {menu: "nav"});
+		$("#start").click ( el.start );
+		$("#start-current").click ( el.continue );
+		$("#show").click ( el.show );
+	} );                       
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<section class="nav">
+		<div class="btn" id="start">Показ презентации</div>
+		<div class="btn" id="start-current" style="margin-top: 5px">Показ с текущего слайда</div>
+		<div class="btn" id="show" style="margin-top: 5px">Полноэкранный режим</div>
+		<nav></nav>
+	</section>
+	<section class="slide-container">
+		<div id="slideshow"> 
+			<div class="slide">
+				<h2>Тестовый слайд 1 - заголовок</h2>
+				<div class="content">
+					Реализуйте систему для показа презентаций. Подумайте над тем, как реализовать переключение слайдов, навигацию. 
+					Сделайте тестовый пример с несколькими слайдами: картинка, табличка, текстовый список. Нет необходимости рисовать 
+					сложный пользовательский интерфейс и поддерживать все браузеры, достаточно корректной работы в последних версиях 
+					mozilla firefox, google chrome, safari. Разрешается и приветствуется использование jquery.
+				</div>
+			</div>
+			<div class="slide" data-ySlideName="Имя слайда">
+				<h2>Тестовый слайд 2 - Картинка</h2>
+				<div class="content">
+					<img src="http://img.yandex.net/i/www/logo.png" alt="логотип яндекса" />
+					<div>	
+						Описание картинки
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<h2>Тестовый слайд 3 - Табличка</h2>
+				<div class="content" style="width: 200px">
+					<table>
+						<tr>
+							<td>Текст 1</td>
+							<td>Текст 2</td>
+							<td>Текст 3</td>
+						</tr>
+						<tr>
+							<td>Текст 1</td>
+							<td>Текст 2</td>
+							<td>Текст 3</td>
+						</tr>
+						<tr>
+							<td>Текст 1</td>
+							<td>Текст 2</td>
+							<td>Текст 3</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="slide">
+				<h2>Тестовый слайд 4 - Списки</h2>
+				<div class="content">
+					<ul>
+						<li>Список 1</li>
+						<li>Список 2</li>
+						<li>Список 3</li>
+					</ul>
+					<ol>
+						<li>Список 1</li>
+						<li>Список 2</li>
+						<li>Список 3</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="clear"></div>
+</div>
+</body>
+</html>
